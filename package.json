@@ -1,0 +1,18 @@
+{
+  "name": "node_store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node_store"
+  },
+  "author": "Robinzon Sokhasvili",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
