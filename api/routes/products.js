@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
     res.status(200).json({
         message:"handling GET requests to /rpoducts"
     });
-});
+}); 
 
 //POST METHOD FOR PRODUCTS
 router.post("/", (req, res, next) => {
