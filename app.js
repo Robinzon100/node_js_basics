@@ -1,10 +1,24 @@
+//importing express and using it
 const express = require('express');
+const app = express();
+
 //require a package that logs out incoming requests
 const morgan = require('morgan');
 //require a package that parses body
 const bodyParser = require('body-parser');
+//mongoose import
+const mongoose = require('mongoose');
 
-const app = express();
+
+
+//connetct mongoose call
+mongoose.connect('mongodb://robinzon:' +
+                process.env.MONGO_ATLAS_PW +
+                '@node-rest-shop-shard-00-00-btaux.mongodb.net:27017,node-rest-shop-shard-00-01-btaux.mongodb.net:27017,node-rest-shop-shard-00-02-btaux.mongodb.net:27017/test?ssl=true&replicaSet=node-rest-shop-shard-0&authSource=admin&retryWrites=true',
+                    {
+                        useNewUrlParser: true 
+                    }
+                );
 
 // app.use((req,res,next) => {
 //     res.status(200).json({
