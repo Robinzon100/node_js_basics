@@ -36,17 +36,21 @@ router.post("/", (req, res, next) => {
 //GET METHOD FOR PRODUCT THAT HAS A SPECIFIC ID INDECATED BY product id
 router.get("/:productId", (req, res, next) => {
     const id = req.params.productId;
-    if (id === 'special') {
-        res.status(200).json({
-            message:"you found the special item",
-            id: id 
-        });
-    }else{
-        res.status(200).json({
-            message:"you passed an ID",
-            id:id
-        });
-    }
+    Product.findById
+    
+    
+    
+    // if (id === 'special') {
+    //     res.status(200).json({
+    //         message:"you found the special item",
+    //         id: id 
+    //     });
+    // }else{
+    //     res.status(200).json({
+    //         message:"you passed an ID",
+    //         id:id
+    //     });
+    // }
 });
 
 
