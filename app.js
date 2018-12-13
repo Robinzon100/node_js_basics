@@ -9,6 +9,10 @@ const bodyParser = require('body-parser');
 //mongoose import
 const mongoose = require('mongoose');
 
+//REQUIRE ROUTS
+const productRouts = require("./api/routes/products");
+const orderRouts = require("./api/routes/orders");
+
 
 
 //connetct mongoose call
@@ -34,8 +38,14 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));//parse the url(if true it suport ritch data bodys)
 app.use(bodyParser.json());//json parsing
 
-const productRouts = require("./api/routes/products");
-const orderRouts = require("./api/routes/orders");
+
+//ROUTS
+//any URL that start with "/products" will be hadled 
+//by this handler "productsRouts"
+app.use("/products", productRouts);
+app.use("/orders", orderRouts); 
+
+
 
 app.use((req, res, next) =>{
     res.header('Access-Control-Allow-Origin', '*');
@@ -48,15 +58,6 @@ app.use((req, res, next) =>{
     }
     next();
 });
-
-
-
-
-//ROUTS
-//any URL that start with "/products" will be hadled 
-//by this handler "productsRouts"
-app.use("/products", productRouts);
-app.use("/orders", orderRouts); 
 
 
 
